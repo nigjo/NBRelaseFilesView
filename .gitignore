@@ -8,3 +8,4 @@
 # NetBeans Files #
 *.nbm
 /build/
+/nbproject/private/
