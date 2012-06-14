@@ -1,4 +1,3 @@
-
 package de.nigjo.nb.releaseview;
 
 import org.netbeans.api.project.Project;
@@ -12,8 +11,11 @@ import org.netbeans.spi.project.ui.support.NodeList;
  *
  * @author hof
  */
-public class ReleaseFilesViewerFactory implements NodeFactory{
-
+@NodeFactory.Registration(projectType =
+"org-netbeans-modules-apisupport-project",
+position = 168)
+public class ReleaseFilesViewerFactory implements NodeFactory
+{
   @Override
   public NodeList<?> createNodes(Project p)
   {
@@ -22,7 +24,7 @@ public class ReleaseFilesViewerFactory implements NodeFactory{
         new FolderApperanceManager(folderNodeList));
 
     return folderNodeList;
-    
+
   }
 
 }
