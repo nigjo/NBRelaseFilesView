@@ -3,6 +3,19 @@
 <!-- for some information on what you could do (e.g. targets to override). -->
 <!-- If you delete this file and reopen the project it will be recreated. -->
 <project name="de.nigjo.nb.releaseview" default="netbeans" basedir=".">
-    <description>Builds, tests, and runs the project de.nigjo.nb.releaseview.</description>
-    <import file="nbproject/build-impl.xml"/>
+  <description>Builds, tests, and runs the project de.nigjo.nb.releaseview.</description>
+  <import file="nbproject/build-impl.xml"/>
+    
+  <target name="init" depends="platformtest.init,harness.init"/>
+  <target name="platformtest.init">
+    <property name="platformtest.active.dir" location="${nbplatform.active.dir}"/>
+    <property name="platformtest.netbeans.dir" location="${netbeans.home}/.."/>
+    <condition property="platformtest.iscurrentide">
+      <equals arg1="${platformtest.active.dir}"
+              arg2="${platformtest.netbeans.dir}"/>
+    </condition>
+    <fail if="platformtest.iscurrentide">
+      Please definie a NetBeans Platform called "${nbplatform.active}" in your IDE.
+or set $${nbplatform.nb701.netbeans.dest.dir} to a proper location.</fail>
+    </target>
 </project>
