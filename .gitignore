@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# NetBeans Files #
+*.nbm
+/build/
