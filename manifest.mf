@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 OpenIDE-Module: de.nigjo.nb.releaseview
-OpenIDE-Module-Implementation-Version: 3
+OpenIDE-Module-Implementation-Version: 4
 OpenIDE-Module-Localizing-Bundle: de/nigjo/nb/releaseview/Bundle.properties
 

@@ -16,6 +16,6 @@
     </condition>
     <fail if="platformtest.iscurrentide">
       Please definie a NetBeans Platform called "${nbplatform.active}" in your IDE.
-or set $${nbplatform.nb701.netbeans.dest.dir} to a proper location.</fail>
+or set $${nbplatform.nb81.netbeans.dest.dir} to a proper location.</fail>
     </target>
 </project>
