@@ -20,11 +20,9 @@ import org.openide.util.ChangeSupport;
 import org.openide.util.ImageUtilities;
 
 /**
- * Eine neue Klasse von hof. Erstellt am Jun 13, 2012, 4:16:05 PM
+ * Node provider for the "Release Files" Node.
  *
- * @todo hier fehlt die Beschreibung der Klasse.
- *
- * @author hof
+ * @author nigjo
  */
 class FolderNodeList implements NodeList<FileObject>
 {
@@ -47,7 +45,9 @@ class FolderNodeList implements NodeList<FileObject>
     FileObject prjDir = project.getProjectDirectory();
     FileObject resDir = prjDir.getFileObject(foldername);
     if(resDir == null)
+    {
       return Collections.emptyList();
+    }
     return Arrays.asList(resDir);
   }
 
@@ -109,15 +109,22 @@ class FolderNodeList implements NodeList<FileObject>
 
   void update()
   {
-    SwingUtilities.invokeLater(new Runnable()
+    if(SwingUtilities.isEventDispatchThread())
     {
-      @Override
-      public void run()
+      cs.fireChange();
+    }
+    else
+    {
+      SwingUtilities.invokeLater(new Runnable()
       {
-        cs.fireChange();
-      }
+        @Override
+        public void run()
+        {
+          cs.fireChange();
+        }
 
-    });
+      });
+    }
   }
 
 }

@@ -6,11 +6,10 @@ import org.openide.filesystems.FileChangeAdapter;
 import org.openide.filesystems.FileEvent;
 
 /**
- * Eine neue Klasse von hof. Erstellt am Jun 13, 2012, 4:16:37 PM
+ * Manager to check for changes in a parent folder. Executes an update to the given
+ * {@link FolderNodeList}.
  *
- * @todo hier fehlt die Beschreibung der Klasse.
- *
- * @author hof
+ * @author nigjo
  */
 class FolderApperanceManager extends FileChangeAdapter
 {
@@ -49,7 +48,9 @@ class FolderApperanceManager extends FileChangeAdapter
   private void update()
   {
     if(!executed)
+    {
       return;
+    }
     executed = false;
     SwingUtilities.invokeLater(changer);
   }

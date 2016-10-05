@@ -5,15 +5,13 @@ import org.netbeans.spi.project.ui.support.NodeFactory;
 import org.netbeans.spi.project.ui.support.NodeList;
 
 /**
- * Eine neue Klasse von hof. Erstellt am Jun 13, 2012, 4:14:15 PM
+ * Basic Factory to create a Node for the {@code release} folder in NetBeans RCP Modules.
  *
- * @todo hier fehlt die Beschreibung der Klasse.
- *
- * @author hof
+ * @author nigjo
  */
 @NodeFactory.Registration(projectType =
-"org-netbeans-modules-apisupport-project",
-position = 168)
+    "org-netbeans-modules-apisupport-project",
+    position = 168)
 public class ReleaseFilesViewerFactory implements NodeFactory
 {
   @Override
